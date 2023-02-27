@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Table(name="T204_Container_Data")
+/* Entity for ContainerData */
 public class ContainerData {
 	
 	@Id
