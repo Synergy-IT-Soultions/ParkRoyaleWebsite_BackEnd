@@ -1,0 +1,15 @@
+2023-01-16 11:15:48,388 INFO org.sits.pr.api.ContentManagement [restartedMain] Starting ReservationApplication using Java 17.0.2 on VenkatasathsAir with PID 40336 (/Users/vprasath/Downloads/reservation/target/classes started by vprasath in /Users/vprasath/Downloads/reservation)
+2023-01-16 11:15:48,389 DEBUG org.sits.pr.api.ContentManagement [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2023-01-16 11:15:48,391 INFO org.sits.pr.api.ContentManagement [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-01-16 11:15:49,347 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-16 11:15:49,423 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2023-01-16 11:15:50,173 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-01-16 11:15:50,179 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-16 11:15:50,180 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2023-01-16 11:15:50,181 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-16 11:15:50,212 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-01-16 11:15:50,213 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1790 ms
+2023-01-16 11:15:50,405 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2023-01-16 11:15:50,546 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2023-01-16 11:15:50,561 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-16 11:15:50,572 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2016Dialect

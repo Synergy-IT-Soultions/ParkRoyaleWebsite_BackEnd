@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "rsa",
+      "type": "org.sits.pr.api.config.properties.RsaKeysProperties",
+      "sourceType": "org.sits.pr.api.config.properties.RsaKeysProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rsa.private-key",
+      "type": "java.security.interfaces.RSAPrivateKey",
+      "sourceType": "org.sits.pr.api.config.properties.RsaKeysProperties"
+    },
+    {
+      "name": "rsa.public-key",
+      "type": "java.security.interfaces.RSAPublicKey",
+      "sourceType": "org.sits.pr.api.config.properties.RsaKeysProperties"
+    }
+  ],
+  "hints": []
+}

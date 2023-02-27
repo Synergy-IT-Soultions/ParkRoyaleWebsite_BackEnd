@@ -1,0 +1,293 @@
+2023-02-05 19:43:30,512 INFO org.sits.pr.api.ContentManagement [restartedMain] Starting ContentManagement using Java 17.0.2 on VenkatasathsAir with PID 4705 (/Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/target/classes started by vprasath in /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI)
+2023-02-05 19:43:30,513 DEBUG org.sits.pr.api.ContentManagement [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2023-02-05 19:43:30,514 INFO org.sits.pr.api.ContentManagement [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-05 19:44:38,244 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Logging Aspect Initialized
+2023-02-05 19:44:39,663 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:44:39,694 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:44:39,919 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:44:39,919 INFO org.sits.pr.api.config.WebSecurityConfig [restartedMain] Web Security Enabled/page/get/**
+2023-02-05 19:44:41,280 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:44:42,653 INFO org.sits.pr.api.ContentManagement [restartedMain] Started ContentManagement in 72.666 seconds (JVM running for 73.511)
+2023-02-05 19:45:24,559 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] Before call of method List org.sits.pr.api.controller.ContentController.getContainerData(String) from class class org.sits.pr.api.controller.ContentController
+2023-02-05 19:45:24,604 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] Before call of method List org.sits.pr.api.service.ContainerDataService.getEntireContainerData(String) from class class org.sits.pr.api.service.ContainerDataService
+2023-02-05 19:45:24,616 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] Before call of method List org.sits.pr.api.repository.PageContainerRepository.getMappedContainerInfo(String) from class class jdk.proxy3.$Proxy120
+2023-02-05 19:45:55,831 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] After call of method List org.sits.pr.api.repository.PageContainerRepository.getMappedContainerInfo(String) from class class jdk.proxy3.$Proxy120
+2023-02-05 19:45:55,833 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] After call of method List org.sits.pr.api.service.ContainerDataService.getEntireContainerData(String) from class class org.sits.pr.api.service.ContainerDataService
+2023-02-05 19:45:55,834 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-1] After call of method List org.sits.pr.api.controller.ContentController.getContainerData(String) from class class org.sits.pr.api.controller.ContentController
+2023-02-05 19:45:55,874 ERROR org.sits.pr.api.exception.DefaultExceptionHandler [http-nio-8080-exec-1] Error Occured : org.springframework.dao.DataAccessResourceFailureException: Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy3/jdk.proxy3.$Proxy120.getMappedContainerInfo(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy3/jdk.proxy3.$Proxy120.getMappedContainerInfo(Unknown Source)
+	at org.sits.pr.api.service.ContainerDataService.getEntireContainerData(ContainerDataService.java:41)
+	at org.sits.pr.api.service.ContainerDataService$$FastClassBySpringCGLIB$$aed8e594.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.sits.pr.api.service.ContainerDataService$$EnhancerBySpringCGLIB$$788ec47c.getEntireContainerData(<generated>)
+	at org.sits.pr.api.controller.ContentController.getContainerData(ContentController.java:26)
+	at org.sits.pr.api.controller.ContentController$$FastClassBySpringCGLIB$$4e802274.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.sits.pr.api.controller.ContentController$$EnhancerBySpringCGLIB$$7401871c.getContainerData(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:73)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:111)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:138)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:50)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:338)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:2186)
+	at org.hibernate.internal.AbstractSharedSessionContract.list(AbstractSharedSessionContract.java:1204)
+	at org.hibernate.query.internal.NativeQueryImpl.doList(NativeQueryImpl.java:177)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:128)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:156)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:144)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:160)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 149 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host DESKTOP-SLPF06D, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2720)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:761)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3180)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:2833)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2671)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1640)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:936)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:108)
+	... 185 more
+
+2023-02-05 19:47:31,894 INFO org.sits.pr.api.ContentManagement [restartedMain] Starting ContentManagement using Java 17.0.2 on VenkatasathsAir with PID 4977 (/Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/target/classes started by vprasath in /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI)
+2023-02-05 19:47:31,896 DEBUG org.sits.pr.api.ContentManagement [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2023-02-05 19:47:31,897 INFO org.sits.pr.api.ContentManagement [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-05 19:47:37,897 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Logging Aspect Initialized
+2023-02-05 19:47:39,052 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:47:39,081 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:47:39,274 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:47:39,274 INFO org.sits.pr.api.config.WebSecurityConfig [restartedMain] Web Security Enabled/page/get/**
+2023-02-05 19:47:39,791 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$453b955a
+2023-02-05 19:47:40,374 INFO org.sits.pr.api.ContentManagement [restartedMain] Started ContentManagement in 8.995 seconds (JVM running for 9.843)
+2023-02-05 19:48:09,531 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.controller.ContentController.getContainerData(String) from class class org.sits.pr.api.controller.ContentController
+2023-02-05 19:48:09,556 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.service.ContainerDataService.getEntireContainerData(String) from class class org.sits.pr.api.service.ContainerDataService
+2023-02-05 19:48:09,562 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.PageContainerRepository.getMappedContainerInfo(String) from class class jdk.proxy4.$Proxy122
+2023-02-05 19:48:09,707 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.PageContainerRepository.getMappedContainerInfo(String) from class class jdk.proxy4.$Proxy122
+2023-02-05 19:48:09,708 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:09,811 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:09,811 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:09,844 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:09,844 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:09,883 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:09,883 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:09,908 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:09,908 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:09,923 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:09,923 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:09,944 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:09,946 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:09,985 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:09,985 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:09,997 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:09,997 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,009 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,010 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,022 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,023 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,046 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,047 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,058 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,059 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,071 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,071 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,084 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,084 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,106 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,106 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,118 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,118 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,131 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method ContainerData org.sits.pr.api.repository.ContainerDataRepository.findByContainerDivId(String) from class class jdk.proxy4.$Proxy124
+2023-02-05 19:48:10,131 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,141 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerTextInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy125
+2023-02-05 19:48:10,142 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,166 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerImageInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy126
+2023-02-05 19:48:10,168 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] Before call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,182 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.repository.ContainerPricingInfoRepository.findByContainerDataId(Long) from class class jdk.proxy4.$Proxy127
+2023-02-05 19:48:10,182 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.service.ContainerDataService.getEntireContainerData(String) from class class org.sits.pr.api.service.ContainerDataService
+2023-02-05 19:48:10,182 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-2] After call of method List org.sits.pr.api.controller.ContentController.getContainerData(String) from class class org.sits.pr.api.controller.ContentController

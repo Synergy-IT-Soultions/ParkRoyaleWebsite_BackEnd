@@ -1,0 +1,13 @@
+2023-01-21 13:51:14,622 INFO org.sits.pr.api.ContentManagement [restartedMain] Starting ReservationApplication using Java 17.0.2 on VenkatasathsAir with PID 60886 (/Users/vprasath/Downloads/reservation/target/classes started by vprasath in /Users/vprasath/Downloads/reservation)
+2023-01-21 13:51:14,625 DEBUG org.sits.pr.api.ContentManagement [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2023-01-21 13:51:14,628 INFO org.sits.pr.api.ContentManagement [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-01-21 13:51:21,794 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Logging Aspect Initialized
+2023-01-21 13:51:22,963 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$50c20967
+2023-01-21 13:51:22,996 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method PasswordEncoder org.sits.pr.api.config.WebSecurityConfig.passwordEncoder() from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$50c20967
+2023-01-21 13:51:23,214 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] Before call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$50c20967
+2023-01-21 13:51:23,215 INFO org.sits.pr.api.config.WebSecurityConfig [restartedMain] Web Security Enabled/get/*
+2023-01-21 13:51:24,438 DEBUG org.sits.pr.api.aspect.LoggingAspect [restartedMain] After call of method SecurityFilterChain org.sits.pr.api.config.WebSecurityConfig.securityFilterChain(HttpSecurity) from class class org.sits.pr.api.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$50c20967
+2023-01-21 13:51:24,997 INFO org.sits.pr.api.ContentManagement [restartedMain] Started ReservationApplication in 11.42 seconds (JVM running for 13.342)
+2023-01-21 13:54:09,130 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-7] Before call of method String org.sits.pr.api.controller.PageController.sayHello(Authentication) from class class org.sits.pr.api.controller.PageController
+2023-01-21 13:54:09,204 INFO org.sits.pr.api.controller.PageController [http-nio-8080-exec-7] Inside savePageFrame Method of PageController
+2023-01-21 13:54:09,207 DEBUG org.sits.pr.api.aspect.LoggingAspect [http-nio-8080-exec-7] After call of method String org.sits.pr.api.controller.PageController.sayHello(Authentication) from class class org.sits.pr.api.controller.PageController
