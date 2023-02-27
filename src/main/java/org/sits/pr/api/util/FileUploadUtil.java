@@ -99,7 +99,6 @@ public class FileUploadUtil {
 	public static File saveThumbnail(String dirPath, File file, int thumbnailWidth, int thumbnailHeight) throws IOException
 	{
 		Path uploadPath = Paths.get(dirPath);
-		Path filePath;
 		
 		if (!Files.exists(uploadPath)) {
 			Files.createDirectories(uploadPath);
