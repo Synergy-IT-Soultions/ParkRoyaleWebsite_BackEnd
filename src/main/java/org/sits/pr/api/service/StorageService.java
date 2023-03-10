@@ -58,6 +58,7 @@ public class StorageService {
 	public void deleteImage(Long imageInfoId) {
 		ImageInfo imageInfo = imageInfoRepository.findByImageInfoIdAndImageIsActive(imageInfoId, Integer.valueOf(1));
 		imageInfo.setImageIsActive(0);
+		imageInfo.setImageName("Image Deleted " + imageInfoId );
 		imageInfoRepository.save(imageInfo);
 	}
 

@@ -28,8 +28,8 @@ org:
    sits:
       pr:
          api:
-            thumbnailHeight: 200
-            thumbnailWidth: 300
+            thumbnailHeight: 150
+            thumbnailWidth: 450
             expireToken: 4
             downloadURL: http://localhost:8080/image/download/
             downloadThumbnailURL: http://localhost:8080/image/thumbnail/download/

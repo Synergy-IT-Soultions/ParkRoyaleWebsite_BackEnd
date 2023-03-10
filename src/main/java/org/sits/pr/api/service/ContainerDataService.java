@@ -20,8 +20,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+import lombok.extern.slf4j.Slf4j;
 
+@Service
+@Slf4j
 public class ContainerDataService {
 	
 	@Autowired
@@ -122,6 +124,13 @@ public class ContainerDataService {
 	private ContainerImageInfo saveContainerImage(ContainerImageInfo containerImageInfo, Long updatedBy) {
 		containerImageInfo.setUpdatedBy(updatedBy);
 		containerImageInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
+		ImageInfo imageInfo = containerImageInfo.getImageInfo();
+		if(imageInfo != null && ( imageInfo.getImageContextPath() == null || imageInfo.getImageContextPath() != "")) {
+			 imageInfo = imageInfoRepository.findByImageInfoIdAndImageIsActive(imageInfo.getImageInfoId(), Integer.valueOf(1));
+			 log.debug("Context Path: "+imageInfo.getImageContextPath());
+			 containerImageInfo.setImageInfo(imageInfo);
+		}
+		
 		return saveContainerImage(containerImageInfo);
 	}
 	

@@ -75,6 +75,7 @@ public class ImageInfoService {
 		
 		ContainerImageInfo containerImageInfo = containerImageInfoRepository.findByContainerDataIdAndImageInfoId(
 				containerData.getContainerDataId(), imageInfo.getImageInfoId());
+		
 		containerImageInfo = (containerImageInfo == null) ? new ContainerImageInfo() : containerImageInfo;
 		containerImageInfo.setContainerDataId(containerData.getContainerDataId());
 		containerImageInfo.setContainerImageIsActive(1);
