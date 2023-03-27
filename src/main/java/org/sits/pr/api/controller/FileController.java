@@ -33,6 +33,7 @@ public class FileController {
 	@Autowired
 	private ImageInfoService imageInfoService;
 	
+	
 	@PostMapping(path="/upload", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
 	@Operation(summary="Upload Image for a container"
 	, description="Upload image for a container, pass on the contianer id, image type, "
@@ -42,7 +43,8 @@ public class FileController {
 	public ContainerImageInfo uploadImage(@RequestParam("file") MultipartFile uploadfile, ImageInfo imageInfo) throws Exception{
 		ImageFileInfo uploadedFile;
 		ContainerImageInfo containerImageInfo = null;
-		uploadedFile = storageService.uploadImage(uploadfile);
+	
+		uploadedFile = storageService.uploadImage(uploadfile, imageInfo.getImageType());
 		
 		if (uploadedFile != null ) {
 			imageInfo.setImageContextPath(uploadedFile.getUploadedFileContextPath());
