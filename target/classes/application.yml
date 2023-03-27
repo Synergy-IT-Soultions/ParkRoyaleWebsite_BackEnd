@@ -29,7 +29,11 @@ org:
       pr:
          api:
             thumbnailHeight: 150
-            thumbnailWidth: 450
+            thumbnailWidth: 300
+            imageTypesWithMaXWidth: CAROUSEL,IMAGEBAR 
+            imageMaxWidthCarousel: 3600
+            imageMaxWidth: 1800
+            imageMaxHeight: 1200
             expireToken: 4
             downloadURL: http://localhost:8080/image/download/
             downloadThumbnailURL: http://localhost:8080/image/thumbnail/download/

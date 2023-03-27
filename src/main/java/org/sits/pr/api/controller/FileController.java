@@ -8,6 +8,7 @@ import org.sits.pr.api.model.ImageFileInfo;
 import org.sits.pr.api.service.ImageInfoService;
 import org.sits.pr.api.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,7 @@ public class FileController {
 	@Autowired
 	private ImageInfoService imageInfoService;
 	
+	
 	@PostMapping(path="/upload", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
 	@Operation(summary="Upload Image for a container"
 	, description="Upload image for a container, pass on the contianer id, image type, "
@@ -42,7 +44,8 @@ public class FileController {
 	public ContainerImageInfo uploadImage(@RequestParam("file") MultipartFile uploadfile, ImageInfo imageInfo) throws Exception{
 		ImageFileInfo uploadedFile;
 		ContainerImageInfo containerImageInfo = null;
-		uploadedFile = storageService.uploadImage(uploadfile);
+	
+		uploadedFile = storageService.uploadImage(uploadfile, imageInfo.getImageType());
 		
 		if (uploadedFile != null ) {
 			imageInfo.setImageContextPath(uploadedFile.getUploadedFileContextPath());

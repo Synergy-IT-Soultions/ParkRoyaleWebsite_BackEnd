@@ -149,6 +149,8 @@ public class ContainerDataService {
 	@Transactional
 	public ContainerData saveContainerData(ContainerData containerData) {
 		
+		log.debug("containerData: "+ containerData.toString());
+		
 		containerDataRepository.save(containerData);
 		
 		Long updatedBy = containerData.getUpdatedBy();

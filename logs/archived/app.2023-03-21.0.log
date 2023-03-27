@@ -1,0 +1,31 @@
+2023-03-21 10:44:14,202 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-9] HikariPool-1 - Connection is not available, request timed out after 30137ms.
+2023-03-21 10:44:14,202 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-6] HikariPool-1 - Connection is not available, request timed out after 30147ms.
+2023-03-21 10:44:14,202 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-10] HikariPool-1 - Connection is not available, request timed out after 30136ms.
+2023-03-21 10:44:14,202 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] HikariPool-1 - Connection is not available, request timed out after 30147ms.
+2023-03-21 10:44:14,356 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-6] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:14,352 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:14,352 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-9] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:14,363 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-10] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:32,439 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] HikariPool-1 - Connection is not available, request timed out after 30005ms.
+2023-03-21 10:44:32,439 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-4] HikariPool-1 - Connection is not available, request timed out after 30008ms.
+2023-03-21 10:44:32,443 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:32,443 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-4] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:45,081 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-5] HikariPool-1 - Connection is not available, request timed out after 30008ms.
+2023-03-21 10:44:45,081 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-1] HikariPool-1 - Connection is not available, request timed out after 30005ms.
+2023-03-21 10:44:45,087 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-5] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:44:45,087 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-1] Operation timed out ClientConnectionId:95c13e8f-97aa-4f77-9d9b-6e918fab6678
+2023-03-21 10:50:10,448 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-1] HikariPool-1 - Connection is not available, request timed out after 30010ms.
+2023-03-21 10:50:10,437 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] HikariPool-1 - Connection is not available, request timed out after 30011ms.
+2023-03-21 10:50:10,437 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-4] HikariPool-1 - Connection is not available, request timed out after 30012ms.
+2023-03-21 10:50:10,446 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-3] HikariPool-1 - Connection is not available, request timed out after 30001ms.
+2023-03-21 10:50:10,470 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-3] The connection is closed.
+2023-03-21 10:50:10,470 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-4] The connection is closed.
+2023-03-21 10:50:10,470 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-1] The connection is closed.
+2023-03-21 10:50:10,470 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] The connection is closed.
+2023-03-21 10:50:21,049 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-5] HikariPool-1 - Connection is not available, request timed out after 30005ms.
+2023-03-21 10:50:21,056 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-5] The TCP/IP connection to the host DESKTOP-SLPF06D, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+2023-03-21 19:29:02,387 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] HikariPool-1 - Connection is not available, request timed out after 30012ms.
+2023-03-21 19:29:02,403 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] The connection is closed.
+2023-03-21 19:29:04,321 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-7] HikariPool-1 - Connection is not available, request timed out after 31963ms.
+2023-03-21 19:29:04,329 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-7] The connection is closed.
+2023-03-21 20:52:33,159 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-3] HikariPool-1 - Interrupted during connection acquisition
