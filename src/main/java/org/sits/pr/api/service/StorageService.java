@@ -7,7 +7,7 @@ import java.nio.file.Files;
 
 import javax.imageio.IIOException;
 
-import org.sits.pr.api.controller.ContentEditController;
+
 import org.sits.pr.api.entity.ImageInfo;
 import org.sits.pr.api.model.ImageFileInfo;
 import org.sits.pr.api.repository.ImageInfoRepository;
@@ -17,10 +17,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
+
 public class StorageService {
 	
 	@Value("${org.sits.pr.api.directory.uploadedFiles}")
