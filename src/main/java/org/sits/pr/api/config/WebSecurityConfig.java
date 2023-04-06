@@ -36,8 +36,8 @@ public class WebSecurityConfig {
 				.addFilterBefore(corsFilter(), SessionManagementFilter.class)
 				.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests((requests) -> requests
-				.requestMatchers(new AntPathRequestMatcher("/content/save/**", HttpMethod.OPTIONS.name())).permitAll()	
-				.requestMatchers(new AntPathRequestMatcher("/image/upload/**", HttpMethod.OPTIONS.name())).permitAll()
+			//	.requestMatchers(new AntPathRequestMatcher("/content/save/**", HttpMethod.OPTIONS.name())).permitAll()	
+			//	.requestMatchers(new AntPathRequestMatcher("/image/upload/**", HttpMethod.OPTIONS.name())).permitAll()
 				.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
