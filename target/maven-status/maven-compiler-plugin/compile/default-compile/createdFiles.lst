@@ -15,6 +15,7 @@ org/sits/pr/api/exception/FileUploadExceptionHandler.class
 org/sits/pr/api/entity/ContainerPricingInfo.class
 org/sits/pr/api/service/UserService.class
 org/sits/pr/api/aspect/package-info.class
+org/sits/pr/api/config/CustomAuthenticationEntryPoint.class
 org/sits/pr/api/service/TokenService.class
 org/sits/pr/api/config/package-info.class
 org/sits/pr/api/controller/ContentEditController.class

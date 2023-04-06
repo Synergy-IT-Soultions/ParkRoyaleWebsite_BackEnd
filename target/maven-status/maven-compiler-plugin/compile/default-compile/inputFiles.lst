@@ -1,6 +1,7 @@
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/exception/custom/ImageFormatNotSupportedException.java
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/entity/PageContainerInfo.java
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/controller/UserController.java
+/Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/config/CustomAuthenticationEntryPoint.java
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/util/FileUploadUtil.java
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/service/ImageInfoService.java
 /Users/vprasath/SynergyITSolutions/Projects/ParkRoyale/Code/Backend/ContentManagementAPI/src/main/java/org/sits/pr/api/ContentManagement.java
