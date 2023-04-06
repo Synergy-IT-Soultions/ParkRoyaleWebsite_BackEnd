@@ -31,8 +31,8 @@ org:
             thumbnailHeight: 200
             thumbnailWidth: 300
             expireToken: 4
-            downloadURL: http://localhost:8080/ContentManagement/image/download/
-            downloadThumbnailURL: http://localhost:8080/ContentManagement/image/thumbnail/download/
+            downloadURL: http://10.10.10.32/ContentManagement/image/download/
+            downloadThumbnailURL: http://10.10.10.32/ContentManagement/image/thumbnail/download/
             adminAccess: SYS_ADMIN
             directory:
                uploadedFiles: D://ParkRoyale//UploadedImages

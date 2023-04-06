@@ -11,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
@@ -23,8 +24,8 @@ import lombok.extern.slf4j.Slf4j;
 @Order(10)
 public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 
-	@ExceptionHandler(AuthenticationCredentialsNotFoundException.class)
-	public final ResponseEntity<ErrorMessage> authenticationException(AuthenticationCredentialsNotFoundException ex) {
+	@ExceptionHandler(BadCredentialsException.class)
+	public final ResponseEntity<ErrorMessage> authenticationException(BadCredentialsException ex) {
 		ErrorMessage errorMessage = new ErrorMessage();
 		errorMessage.setErrorMessage(ex.getMessage());
 		errorMessage.setErrorDesc("Authentication Exception");

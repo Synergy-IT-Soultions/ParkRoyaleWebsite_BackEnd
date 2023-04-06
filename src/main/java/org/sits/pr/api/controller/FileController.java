@@ -1,16 +1,20 @@
 package org.sits.pr.api.controller;
 
+
 import java.io.IOException;
 
+import org.sits.pr.api.config.BearerTokenWrapper;
 import org.sits.pr.api.entity.ContainerImageInfo;
 import org.sits.pr.api.entity.ImageInfo;
 import org.sits.pr.api.model.ImageFileInfo;
 import org.sits.pr.api.service.ImageInfoService;
 import org.sits.pr.api.service.StorageService;
+import org.sits.pr.api.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,11 +24,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.extern.slf4j.Slf4j;
 
 
 
 @RestController
 @RequestMapping("/image")
+@Slf4j
 public class FileController {
 	
 	@Autowired
@@ -32,6 +38,12 @@ public class FileController {
 	
 	@Autowired
 	private ImageInfoService imageInfoService;
+	
+	@Autowired
+	private TokenService tokenService;
+	
+	@Autowired
+	private BearerTokenWrapper tokenWrapper;
 	
 	
 	@PostMapping(path="/upload", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
@@ -56,6 +68,10 @@ public class FileController {
 			imageInfo.setImageHeight(uploadedFile.getHeight());
 			imageInfo.setImageWidth(uploadedFile.getWidth());
 			imageInfo.setImageSize(uploadedFile.getSize());
+			imageInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken()));
+			//imageInfo.setUpdatedBy(tokenService.getUpdatedBy(authentication)); 
+			
+			
 			
 			containerImageInfo = imageInfoService.saveImageInfo(imageInfo);
 			//imageInfo.setImageContextPath("");
@@ -92,8 +108,8 @@ public class FileController {
 	@PostMapping("/delete/{imageInfoId}")
 	@Operation(summary="Delete Image for a container"
 	, description="Inctivate the image for the given image info id. It won't hard delete the image")
-	public ResponseEntity<?> deleteImage(@PathVariable Long imageInfoId) throws IOException {
-		storageService.deleteImage(imageInfoId);
+	public ResponseEntity<?> deleteImage(@PathVariable Long imageInfoId, Authentication authentication) throws IOException {  
+		storageService.deleteImage(imageInfoId, tokenService.getUpdatedBy(tokenWrapper.getToken()));
 		return ResponseEntity.status(HttpStatus.OK).body("File Deleted Successfully.");
 
 	}

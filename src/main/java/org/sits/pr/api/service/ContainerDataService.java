@@ -127,6 +127,8 @@ public class ContainerDataService {
 		ImageInfo imageInfo = containerImageInfo.getImageInfo();
 		if(imageInfo != null && ( imageInfo.getImageContextPath() == null || imageInfo.getImageContextPath() != "")) {
 			 imageInfo = imageInfoRepository.findByImageInfoIdAndImageIsActive(imageInfo.getImageInfoId(), Integer.valueOf(1));
+			 imageInfo.setUpdatedBy(updatedBy);
+			 imageInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
 			 log.debug("Context Path: "+imageInfo.getImageContextPath());
 			 containerImageInfo.setImageInfo(imageInfo);
 		}

@@ -30,11 +30,15 @@ org:
          api:
             thumbnailHeight: 200
             thumbnailWidth: 300
+            imageTypesWithMaXWidth: CAROUSEL,IMAGEBAR 
+            imageMaxWidthCarousel: 3600
+            imageMaxWidth: 1800
+            imageMaxHeight: 1200
             expireToken: 4
-            downloadURL: http://localhost:8080/ContentManagement/image/download/
-            downloadThumbnailURL: http://localhost:8080/ContentManagement/image/thumbnail/download/
+            downloadURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/download/
+            downloadThumbnailURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/thumbnail/download/
             adminAccess: SYS_ADMIN
             directory:
-               uploadedFiles: C://ParkRoyale//UploadedImages
+               uploadedFiles: C://ParkRoyale//UploadedImages//
 
                    

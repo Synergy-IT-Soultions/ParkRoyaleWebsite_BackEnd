@@ -29,11 +29,13 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String password = authentication.getCredentials().toString();
         log.info("username: " + username + " : " + "password: " + password);
         UserDetails user= customUserDetailsService.loadUserByUsername(username);
-        return checkPassword(user,password);
+        Authentication auth = checkPassword(user,password);
+        return auth;
         
     }
 
     private Authentication checkPassword(UserDetails user, String rawPassword) {
+    	log.info("Inside Check Password");
         if(passwordEncoder.matches(rawPassword, user.getPassword())) {
         	log.info("Successfully Logged In");
             return new UsernamePasswordAuthenticationToken(user.getUsername(),
@@ -43,7 +45,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
                     );
         }
         else {
-            throw new BadCredentialsException("Bad Credentials");
+        	log.info("Inside else condition");
+            throw new BadCredentialsException("Invalid Credentials");
         }
     }
 

@@ -2,17 +2,18 @@ package org.sits.pr.api.controller;
 
 import java.sql.Date;
 
+import org.sits.pr.api.config.BearerTokenWrapper;
 import org.sits.pr.api.entity.ContainerData;
 import org.sits.pr.api.entity.ContainerImageInfo;
 import org.sits.pr.api.entity.ContainerPricingInfo;
 import org.sits.pr.api.entity.ContainerTextInfo;
 import org.sits.pr.api.service.ContainerDataService;
+import org.sits.pr.api.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,11 @@ public class ContentEditController  {
 	@Autowired
 	ContainerDataService containerDataService;
 	
+	@Autowired
+	TokenService tokenService;
+	
+	@Autowired
+	BearerTokenWrapper tokenWrapper;
 	
 	// api to edit a text inside a container
 	
@@ -42,7 +48,7 @@ public class ContentEditController  {
 	
 	public ContainerTextInfo saveContainerText(@RequestBody  ContainerTextInfo containerTextInfo) {
 		log.info("Inside savePageFrame Method of PageController");
-		containerTextInfo.setUpdatedBy(3L); // need to be replaced when JWT is being implemented
+		containerTextInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerTextInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
 		return containerDataService.saveContainerText(containerTextInfo);
 	}
@@ -61,7 +67,7 @@ public class ContentEditController  {
 	
 	public ContainerImageInfo saveContainerImage(@RequestBody  ContainerImageInfo containerImageInfo) {
 		log.info("Inside savePageFrame Method of PageController");
-		containerImageInfo.setUpdatedBy(3L); // need to be replaced when JWT is being implemented
+		containerImageInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerImageInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
 		return containerDataService.saveContainerImage(containerImageInfo);
 	}
@@ -80,7 +86,7 @@ public class ContentEditController  {
 	@PostMapping("/save/container/pricing")
 	public ContainerPricingInfo saveContainerPricing(@RequestBody  ContainerPricingInfo containerPricingInfo) {
 		log.info("Inside savePageFrame Method of PageController");
-		containerPricingInfo.setUpdatedBy(3L); // need to be replaced when JWT is being implemented
+		containerPricingInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerPricingInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
 		return containerDataService.saveContainerPricing(containerPricingInfo);
 	}
@@ -98,7 +104,7 @@ public class ContentEditController  {
 		log.info("Inside savePageFrame Method of PageController");
 		if (containerData.getContainerDataId() == null)
 			throw new Exception("Container information is missing");
-		containerData.setUpdatedBy(3L); // need to be replaced when JWT is being implemented
+		containerData.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerData.setUpdatedDate(new Date(System.currentTimeMillis()));
 		return containerDataService.saveContainerData(containerData);
 	}

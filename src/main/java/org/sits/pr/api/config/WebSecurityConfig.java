@@ -3,6 +3,7 @@ package org.sits.pr.api.config;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import org.sits.pr.api.config.filter.CorsFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -15,7 +16,9 @@ import org.springframework.security.config.annotation.web.configurers.oauth2.ser
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationEntryPoint;
 import org.springframework.security.oauth2.server.resource.web.access.BearerTokenAccessDeniedHandler;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
 import org.springframework.security.web.session.SessionManagementFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -29,17 +32,16 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
+				
 				.addFilterBefore(corsFilter(), SessionManagementFilter.class)
-				
 				.csrf(AbstractHttpConfigurer::disable)
-				
 				.authorizeHttpRequests((requests) -> requests
 				.requestMatchers(new AntPathRequestMatcher("/content/save/**", HttpMethod.OPTIONS.name())).permitAll()	
 				.requestMatchers(new AntPathRequestMatcher("/image/upload/**", HttpMethod.OPTIONS.name())).permitAll()
 				.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-				.exceptionHandling((ex) -> ex.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
+				.exceptionHandling((ex) -> ex.authenticationEntryPoint(authenticationEntryPoint())
 						.accessDeniedHandler(new BearerTokenAccessDeniedHandler()))
 				.build();
 	}
@@ -63,10 +65,13 @@ public class WebSecurityConfig {
 				.requestMatchers(new AntPathRequestMatcher("/v2/api-docs/**")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/webjars/**")).permitAll().anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt).exceptionHandling(ex -> {
-					ex.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint());
+				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+				.exceptionHandling(ex -> {
+					//ex.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint());
+					ex.authenticationEntryPoint(authenticationEntryPoint());
 					ex.accessDeniedHandler(new BearerTokenAccessDeniedHandler());
-				}).httpBasic(withDefaults()).build();
+				})
+				.httpBasic(withDefaults()).build();
 	}
 	
 	@Bean
@@ -74,5 +79,10 @@ public class WebSecurityConfig {
         CorsFilter filter = new CorsFilter();
         return filter;
     }
+	
+	@Bean
+	  public AuthenticationEntryPoint authenticationEntryPoint() {
+	    return new CustomAuthenticationEntryPoint();
+	  }
 	
 }

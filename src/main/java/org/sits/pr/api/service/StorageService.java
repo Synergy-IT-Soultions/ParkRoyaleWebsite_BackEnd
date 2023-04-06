@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.sql.Date;
 
 import javax.imageio.IIOException;
 
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 
 @Service
 
@@ -96,10 +98,12 @@ public class StorageService {
 	}
 
 
-	public void deleteImage(Long imageInfoId) {
+	public void deleteImage(Long imageInfoId, Long updatedBy) {
 		ImageInfo imageInfo = imageInfoRepository.findByImageInfoIdAndImageIsActive(imageInfoId, Integer.valueOf(1));
 		imageInfo.setImageIsActive(0);
 		imageInfo.setImageName("Image Deleted " + imageInfoId );
+		imageInfo.setUpdatedBy(updatedBy);
+		imageInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
 		imageInfoRepository.save(imageInfo);
 	}
 

@@ -14,4 +14,3 @@ public class ContentManagement  {
 		SpringApplication.run(ContentManagement.class, args);	
 	}
 }
-
