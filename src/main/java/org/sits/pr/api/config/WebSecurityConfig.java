@@ -2,8 +2,6 @@ package org.sits.pr.api.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import org.sits.pr.api.config.filter.CorsFilter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -14,15 +12,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationEntryPoint;
 import org.springframework.security.oauth2.server.resource.web.access.BearerTokenAccessDeniedHandler;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.ExceptionTranslationFilter;
-import org.springframework.security.web.session.SessionManagementFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import io.swagger.v3.oas.models.PathItem.HttpMethod;
 
 @Configuration
 @EnableWebSecurity
@@ -33,7 +26,7 @@ public class WebSecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
 				
-				.addFilterBefore(corsFilter(), SessionManagementFilter.class)
+				
 				.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests((requests) -> requests
 			//	.requestMatchers(new AntPathRequestMatcher("/content/save/**", HttpMethod.OPTIONS.name())).permitAll()	
@@ -50,11 +43,12 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain tokenSecurityFilterChain(HttpSecurity http) throws Exception {
 		return http
-				.addFilterBefore(corsFilter(), SessionManagementFilter.class)
+				
 				.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests((requests) -> requests
 				.requestMatchers(new AntPathRequestMatcher("/user/authenticate")).permitAll()
-			//	.requestMatchers(new AntPathRequestMatcher("/image/download/**")).permitAll()
-			//	.requestMatchers(new AntPathRequestMatcher("/content/get/**")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/image/download/**")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/image/thumbnail/download/**")).permitAll()
+				.requestMatchers(new AntPathRequestMatcher("/content/get/**")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/image/**")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/content/**")).permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/configuration/**")).permitAll()
@@ -74,11 +68,7 @@ public class WebSecurityConfig {
 				.httpBasic(withDefaults()).build();
 	}
 	
-	@Bean
-    CorsFilter corsFilter() {
-        CorsFilter filter = new CorsFilter();
-        return filter;
-    }
+	
 	
 	@Bean
 	  public AuthenticationEntryPoint authenticationEntryPoint() {

@@ -1,5 +1,6 @@
 package org.sits.pr.api.controller;
 
+
 import java.sql.Date;
 
 import org.sits.pr.api.config.BearerTokenWrapper;
@@ -7,9 +8,13 @@ import org.sits.pr.api.entity.ContainerData;
 import org.sits.pr.api.entity.ContainerImageInfo;
 import org.sits.pr.api.entity.ContainerPricingInfo;
 import org.sits.pr.api.entity.ContainerTextInfo;
+import org.sits.pr.api.exception.custom.TokenExpiredException;
 import org.sits.pr.api.service.ContainerDataService;
 import org.sits.pr.api.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,11 +51,12 @@ public class ContentEditController  {
 			+ "all non-null column values in the JSON and setting the 'containerTextIsActive' to 0 "
 			)
 	
-	public ContainerTextInfo saveContainerText(@RequestBody  ContainerTextInfo containerTextInfo) {
+	public ResponseEntity<ContainerTextInfo>  saveContainerText(@RequestBody  ContainerTextInfo containerTextInfo) throws TokenExpiredException {
 		log.info("Inside savePageFrame Method of PageController");
 		containerTextInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerTextInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
-		return containerDataService.saveContainerText(containerTextInfo);
+		containerTextInfo = containerDataService.saveContainerText(containerTextInfo);
+		return ResponseEntity.ok().body(containerTextInfo);
 	}
 	
 	// api to edit a image inside a container
@@ -65,15 +71,17 @@ public class ContentEditController  {
 			+ "This API can also be used to soft delete the ContainerImageInfo by passing containerImageInfoId and "
 			+ "all non-null column values in the JSON and setting the 'containerImageIsActive' to 0 ")
 	
-	public ContainerImageInfo saveContainerImage(@RequestBody  ContainerImageInfo containerImageInfo) {
+	public ResponseEntity<ContainerImageInfo> saveContainerImage(@RequestBody  ContainerImageInfo containerImageInfo) throws TokenExpiredException {
 		log.info("Inside savePageFrame Method of PageController");
 		containerImageInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerImageInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
-		return containerDataService.saveContainerImage(containerImageInfo);
+		containerImageInfo = containerDataService.saveContainerImage(containerImageInfo);
+		return ResponseEntity.ok().body(containerImageInfo);
 	}
 	
 	
 	// api to pricing inside a container
+	
 	@Operation(summary="Save Container Text"
 			, description="Save the edited Container Pricing by passing the JSON of ContainerPricingInfo Object, "
 					+ "if the primary key of this object 'containerPricingInfoId' is missing in the JSON, "
@@ -84,14 +92,16 @@ public class ContentEditController  {
 					+ "all non-null column values in the JSON and setting the 'containerPricingIsActive' to 0 ")
 					
 	@PostMapping("/save/container/pricing")
-	public ContainerPricingInfo saveContainerPricing(@RequestBody  ContainerPricingInfo containerPricingInfo) {
+	public ResponseEntity<ContainerPricingInfo> saveContainerPricing(@RequestBody  ContainerPricingInfo containerPricingInfo) throws TokenExpiredException {
 		log.info("Inside savePageFrame Method of PageController");
 		containerPricingInfo.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerPricingInfo.setUpdatedDate(new Date(System.currentTimeMillis()));
-		return containerDataService.saveContainerPricing(containerPricingInfo);
+		containerPricingInfo = containerDataService.saveContainerPricing(containerPricingInfo);
+		return ResponseEntity.ok().body(containerPricingInfo);
 	}
 	
 	// api to save an entire container
+	
 	@Operation(summary="Save Container Details"
 			, description="Save the edited Container details by passing the JSON of ContainerData Object, "
 					+ "this Object can contain List of ContainerTextInfo, List of ContainerImageInfo,"
@@ -100,13 +110,15 @@ public class ContentEditController  {
 					+ "be created using this API. ")
 					
 	@PostMapping("/save/container")
-	public ContainerData saveContainerData(@RequestBody  ContainerData containerData) throws Exception{
+	public ResponseEntity<ContainerData> saveContainerData(@RequestBody  ContainerData containerData) throws TokenExpiredException, Exception{
 		log.info("Inside savePageFrame Method of PageController");
 		if (containerData.getContainerDataId() == null)
 			throw new Exception("Container information is missing");
 		containerData.setUpdatedBy(tokenService.getUpdatedBy(tokenWrapper.getToken())); // need to be replaced when JWT is being implemented
 		containerData.setUpdatedDate(new Date(System.currentTimeMillis()));
-		return containerDataService.saveContainerData(containerData);
+		containerData = containerDataService.saveContainerData(containerData);
+		return ResponseEntity.ok().body(containerData);
 	}
+	
 
 }

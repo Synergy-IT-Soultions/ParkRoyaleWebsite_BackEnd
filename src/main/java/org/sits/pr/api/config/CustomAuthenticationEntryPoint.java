@@ -21,6 +21,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
     throws IOException, ServletException {
     	
     	log.error("Exception: " + authException.getMessage());
+    	authException.printStackTrace();
     	
     	 if (authException != null) {
 	    	ErrorMessage errorMessage = new ErrorMessage();

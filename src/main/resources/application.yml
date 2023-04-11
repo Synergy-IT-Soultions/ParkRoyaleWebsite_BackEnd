@@ -34,7 +34,7 @@ org:
             imageMaxWidthCarousel: 3600
             imageMaxWidth: 1800
             imageMaxHeight: 1200
-            expireToken: 4
+            expireToken: 2
             downloadURL: http://localhost:8080/image/download/
             downloadThumbnailURL: http://localhost:8080/image/thumbnail/download/
             adminAccess: SYS_ADMIN

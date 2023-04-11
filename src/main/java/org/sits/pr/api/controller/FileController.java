@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.sits.pr.api.config.BearerTokenWrapper;
 import org.sits.pr.api.entity.ContainerImageInfo;
 import org.sits.pr.api.entity.ImageInfo;
+import org.sits.pr.api.exception.custom.TokenExpiredException;
 import org.sits.pr.api.model.ImageFileInfo;
 import org.sits.pr.api.service.ImageInfoService;
 import org.sits.pr.api.service.StorageService;
@@ -52,7 +53,7 @@ public class FileController {
 			+ "active flag and details of the image entered by the user. "
 			+ "Image gets uploaded and the information gets updated in the database as well."
 			+ "Same image uploaded to the same container, will update the existing record.")
-	public ContainerImageInfo uploadImage(@RequestParam("file") MultipartFile uploadfile, ImageInfo imageInfo) throws Exception{
+	public ContainerImageInfo uploadImage(@RequestParam("file") MultipartFile uploadfile, ImageInfo imageInfo) throws TokenExpiredException, Exception{
 		ImageFileInfo uploadedFile;
 		ContainerImageInfo containerImageInfo = null;
 	
@@ -108,7 +109,7 @@ public class FileController {
 	@PostMapping("/delete/{imageInfoId}")
 	@Operation(summary="Delete Image for a container"
 	, description="Inctivate the image for the given image info id. It won't hard delete the image")
-	public ResponseEntity<?> deleteImage(@PathVariable Long imageInfoId, Authentication authentication) throws IOException {  
+	public ResponseEntity<?> deleteImage(@PathVariable Long imageInfoId) throws IOException, TokenExpiredException{  
 		storageService.deleteImage(imageInfoId, tokenService.getUpdatedBy(tokenWrapper.getToken()));
 		return ResponseEntity.status(HttpStatus.OK).body("File Deleted Successfully.");
 

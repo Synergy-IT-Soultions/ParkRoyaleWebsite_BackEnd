@@ -5,6 +5,7 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.sits.pr.api.exception.custom.TokenExpiredException;
 import org.sits.pr.api.exception.dto.ErrorMessage;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
@@ -31,6 +32,15 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 		errorMessage.setErrorDesc("Authentication Exception");
 		log.error("Error Occured : " + getExceptionStackTrace(ex));
 		return new ResponseEntity<ErrorMessage>(errorMessage, new HttpHeaders(), HttpStatus.FORBIDDEN);
+	}
+	
+	@ExceptionHandler(TokenExpiredException.class)
+	public final ResponseEntity<ErrorMessage> authenticationException(TokenExpiredException ex) {
+		ErrorMessage errorMessage = new ErrorMessage();
+		errorMessage.setErrorMessage(ex.getMessage());
+		errorMessage.setErrorDesc("Authentication Exception");
+		log.error("Error Occured : " + getExceptionStackTrace(ex));
+		return new ResponseEntity<ErrorMessage>(errorMessage, new HttpHeaders(), HttpStatus.UNAUTHORIZED);
 	}
 
 	@ExceptionHandler(Exception.class)

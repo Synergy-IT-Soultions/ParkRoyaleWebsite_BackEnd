@@ -1,10 +1,14 @@
 package org.sits.pr.api.service;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
 import org.sits.pr.api.entity.UserInfo;
+import org.sits.pr.api.exception.custom.TokenExpiredException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
@@ -53,15 +57,27 @@ public class TokenService {
         return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }
     
-    public Long getUpdatedBy(String token) {
+    public Long getUpdatedBy(String token) throws TokenExpiredException{
     	UserInfo userInfo = userService.getUserInfoByUserName(getUserNamefromToken(token)); 
     	return userInfo.getUserId();
     	
     }
     
-    private String getUserNamefromToken(String strToken) {
+    private String getUserNamefromToken(String strToken) throws TokenExpiredException{
+    	//  validateToken(strToken);
           String strName = decoder.decode(strToken).getSubject();
           log.debug("strName: "+strName);
           return strName;
+    }
+    
+    public void validateToken(String strToken) throws TokenExpiredException {
+         Instant instant = decoder.decode(strToken).getExpiresAt();
+         Instant now = Instant.now();
+         ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
+         // Get the time as a string
+         String time = zonedDateTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+         if(instant.isAfter(now)) {
+        	 throw new TokenExpiredException("Authentication Bearer Token Expired at " + time);
+         }
     }
 }

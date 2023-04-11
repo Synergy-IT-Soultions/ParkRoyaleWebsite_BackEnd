@@ -30,6 +30,7 @@ org/sits/pr/api/entity/ContainerImageInfo.class
 org/sits/pr/api/exception/package-info.class
 org/sits/pr/api/config/WebSecurityConfig.class
 org/sits/pr/api/service/CustomAuthenticationProvider.class
+org/sits/pr/api/config/BearerTokenWrapper.class
 org/sits/pr/api/exception/dto/ErrorMessage.class
 org/sits/pr/api/util/FileUploadUtil.class
 org/sits/pr/api/exception/DefaultExceptionHandler.class
@@ -43,6 +44,7 @@ org/sits/pr/api/repository/UserRepository.class
 org/sits/pr/api/config/filter/CorsFilter.class
 org/sits/pr/api/entity/ImageInfo$ImageInfoBuilder.class
 org/sits/pr/api/repository/PageContainerRepository.class
+org/sits/pr/api/config/BearerTokenInterceptor.class
 org/sits/pr/api/exception/dto/package-info.class
 org/sits/pr/api/controller/package-info.class
 org/sits/pr/api/repository/ContainerPricingInfoRepository.class
@@ -58,6 +60,7 @@ org/sits/pr/api/config/filter/package-info.class
 org/sits/pr/api/repository/ContainerDataRepository.class
 org/sits/pr/api/util/package-info.class
 org/sits/pr/api/config/AuthenticationConfig.class
+org/sits/pr/api/config/WebMvcConfig.class
 org/sits/pr/api/entity/UserInfo.class
 org/sits/pr/api/model/package-info.class
 org/sits/pr/api/entity/ContainerImageInfo$ContainerImageInfoBuilder.class
