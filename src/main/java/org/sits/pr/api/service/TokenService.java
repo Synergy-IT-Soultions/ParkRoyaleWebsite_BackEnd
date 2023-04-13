@@ -64,7 +64,7 @@ public class TokenService {
     }
     
     private String getUserNamefromToken(String strToken) throws TokenExpiredException{
-    	//  validateToken(strToken);
+    	  validateToken(strToken);
           String strName = decoder.decode(strToken).getSubject();
           log.debug("strName: "+strName);
           return strName;
@@ -77,7 +77,7 @@ public class TokenService {
          // Get the time as a string
          String time = zonedDateTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
          if(instant.isAfter(now)) {
-        	 throw new TokenExpiredException("Authentication Bearer Token Expired at " + time);
+        	 throw new TokenExpiredException("Authentication Bearer Token Expired at " + time + ". Please login again!" );
          }
     }
 }
