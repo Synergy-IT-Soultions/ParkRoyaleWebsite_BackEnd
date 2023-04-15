@@ -37,7 +37,7 @@ org:
             expireToken: 2
             downloadURL: http://localhost:8080/image/download/
             downloadThumbnailURL: http://localhost:8080/image/thumbnail/download/
-            adminAccess: SYS_ADMIN
+            adminAccess: SCOPE_SYS_ADMIN
             directory:
                uploadedFiles: //Users//vprasath//SynergyITSolutions//Projects//ParkRoyale//UploadedImages//
 

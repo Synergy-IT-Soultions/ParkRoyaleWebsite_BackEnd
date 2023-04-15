@@ -37,7 +37,7 @@ org:
             expireToken: 4
             downloadURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/download/
             downloadThumbnailURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/thumbnail/download/
-            adminAccess: SYS_ADMIN
+            adminAccess: SCOPE_SYS_ADMIN
             directory:
                uploadedFiles: C://ParkRoyale//UploadedImages//
 

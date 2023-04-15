@@ -1,6 +1,7 @@
 package org.sits.pr.api.controller;
 
 import org.sits.pr.api.entity.UserInfo;
+import org.sits.pr.api.entity.UserInfoDto;
 import org.sits.pr.api.service.TokenService;
 import org.sits.pr.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,11 +42,19 @@ public class UserController {
 	@Operation(summary = "Create / Update user information"
 	, description = "Create an ADMIN user or update an ADMIN user so that they can edit the content of the page."
 			+ " Only SYS_ADMIN can perform this operation")
-	public UserInfo saveUser(@RequestBody UserInfo userInfo, Authentication authentication) throws Exception {
+	public UserInfo saveUser(@RequestBody UserInfoDto userInfo, Authentication authentication) throws Exception {
 		if(!userService.getRoles(authentication).contains(adminAccess)) {
 			throw new Exception("You do not have access to perform this action!");
 		}
 		
-		return userService.saveUserInfo(userInfo);
+		UserInfo info = new UserInfo();
+		info.setFirstName(userInfo.getFirstName());
+		info.setLastName(userInfo.getLastName());
+		info.setPassword(userInfo.getPassword());
+		info.setIsEnabled(userInfo.getIsEnabled());
+		info.setRole(userInfo.getRole());
+		info.setUserId(userInfo.getUserId());
+		info.setUserName(userInfo.getUserName());
+		return userService.saveUserInfo(info);
 	}
 }

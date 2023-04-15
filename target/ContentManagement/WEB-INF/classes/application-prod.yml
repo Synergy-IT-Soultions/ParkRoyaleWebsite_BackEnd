@@ -1,0 +1,38 @@
+server:
+   port: 8080
+
+rsa:
+   private-key: classpath:certs/private.pem
+   public-key: classpath:certs/public.pem  
+   
+spring:
+   servlet:
+      multipart:
+         max-file-size: 1MB
+         max-request-size: 1MB
+   mvc:
+      pathmatch:
+         matching-strategy: ANT_PATH_MATCHER
+   datasource:
+      url: jdbc:sqlserver://PRODSRVPK:1433;databaseName=LTS;encrypt=true;trustServerCertificate=true;
+      username: PRADMINSITC
+      password: "!t@$yN#rgy22dB"
+   jpa:
+      show-sql: true
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.SQLServerDialect          
+            format_sql: true
+ 
+org:
+   sits:
+      pr:
+         api:
+            thumbnailHeight: 150
+            thumbnailWidth: 300
+            expireToken: 8
+            downloadURL: https://stagessl.parkroyalekodaikanal.com/ContentManagement/image/download/
+            downloadThumbnailURL: https://stagessl.parkroyalekodaikanal.com/ContentManagement/image/thumbnail/download/
+            adminAccess: SYS_ADMIN
+            directory:
+               uploadedFiles: D://ParkRoyale//UploadedImages

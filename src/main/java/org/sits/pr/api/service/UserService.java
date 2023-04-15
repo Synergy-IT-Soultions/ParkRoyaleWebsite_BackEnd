@@ -43,7 +43,9 @@ public class UserService {
 
 		Collection<? extends GrantedAuthority> roles = authentication.getAuthorities();
 		for (GrantedAuthority role : roles) {
+			
 			String strRole = role.getAuthority();
+			log.debug("Role: "+strRole);
 			userRoles.add(strRole);
 		}
 		

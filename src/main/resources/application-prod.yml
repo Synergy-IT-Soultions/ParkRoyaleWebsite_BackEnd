@@ -33,6 +33,6 @@ org:
             expireToken: 8
             downloadURL: https://stagessl.parkroyalekodaikanal.com/ContentManagement/image/download/
             downloadThumbnailURL: https://stagessl.parkroyalekodaikanal.com/ContentManagement/image/thumbnail/download/
-            adminAccess: SYS_ADMIN
+            adminAccess: SCOPE_SYS_ADMIN
             directory:
                uploadedFiles: D://ParkRoyale//UploadedImages
