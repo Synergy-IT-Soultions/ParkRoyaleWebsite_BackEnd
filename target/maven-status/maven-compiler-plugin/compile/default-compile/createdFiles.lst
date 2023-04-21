@@ -10,6 +10,7 @@ org/sits/pr/api/service/package-info.class
 org/sits/pr/api/entity/package-info.class
 org/sits/pr/api/repository/package-info.class
 org/sits/pr/api/repository/ContainerImageInfoRepository.class
+org/sits/pr/api/entity/UserInfoDto.class
 org/sits/pr/api/entity/ContainerData$ContainerDataBuilder.class
 org/sits/pr/api/exception/FileUploadExceptionHandler.class
 org/sits/pr/api/entity/ContainerPricingInfo.class

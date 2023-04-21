@@ -64,7 +64,7 @@ public class TokenService {
     }
     
     private String getUserNamefromToken(String strToken) throws TokenExpiredException{
-    	  validateToken(strToken);
+    	//  validateToken(strToken);
           String strName = decoder.decode(strToken).getSubject();
           log.debug("strName: "+strName);
           return strName;
