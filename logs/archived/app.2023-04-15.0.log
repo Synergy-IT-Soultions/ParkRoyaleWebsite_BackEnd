@@ -1,4 +1,5 @@
-2023-04-28 14:11:21,012 ERROR com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+2023-04-15 09:45:20,930 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] Violation of UNIQUE KEY constraint 'UQ__T101_Use__44A5C381445D2C21'. Cannot insert duplicate key in object 'dbo.T101_User'. The duplicate key value is (nprasath).
+2023-04-15 12:29:29,165 ERROR com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-6 - Exception during pool initialization.
 com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host DESKTOP-SLPF06D, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
 	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
 	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:288)
@@ -59,7 +60,7 @@ com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the ho
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-2023-04-28 14:11:52,480 ERROR com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+2023-04-15 12:30:00,334 ERROR com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-6 - Exception during pool initialization.
 com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host DESKTOP-SLPF06D, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
 	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
 	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:288)
@@ -119,3 +120,4 @@ com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the ho
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2023-04-15 12:57:24,843 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] Violation of UNIQUE KEY constraint 'UQ__T101_Use__44A5C381445D2C21'. Cannot insert duplicate key in object 'dbo.T101_User'. The duplicate key value is (sys_admin).
