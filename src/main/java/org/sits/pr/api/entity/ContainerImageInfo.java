@@ -63,11 +63,4 @@ public class ContainerImageInfo {
 	@Transient
 	private final String editType = "Image";
 	
-	public Integer getContainerImageIsLinked() {
-		if (containerImageIsLinked == null) {
-			return 0;
-		}
-		return containerImageIsLinked;
-	}
-	
 }
