@@ -10,6 +10,7 @@ import org.sits.pr.api.entity.ContainerPricingInfo;
 import org.sits.pr.api.entity.ContainerTextInfo;
 import org.sits.pr.api.entity.ImageInfo;
 import org.sits.pr.api.entity.PageContainerInfo;
+import org.sits.pr.api.model.ContainerImageLink;
 import org.sits.pr.api.repository.ContainerDataRepository;
 import org.sits.pr.api.repository.ContainerImageInfoRepository;
 import org.sits.pr.api.repository.ContainerPricingInfoRepository;
@@ -19,6 +20,7 @@ import org.sits.pr.api.repository.PageContainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.SerializationUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -174,6 +176,45 @@ public class ContainerDataService {
 
 	public ImageInfo getImageInfo(Long imageInfoId) {
 		return imageInfoRepository.findByImageInfoIdAndImageIsActive(imageInfoId, Integer.valueOf(1));
+	}
+
+	public ContainerImageInfo saveContainerImageLink(ContainerImageLink containerImageLink) {
+		 
+		   ContainerData fromContainerData = containerDataRepository.findByContainerDivId(containerImageLink.getFromContainerDivId());
+		   ContainerData toContainerData = containerDataRepository.findByContainerDivId(containerImageLink.getToContainerDivId());
+		  
+		   ContainerImageInfo fromContainerImageInfo = containerImageInfoRepository.findByContainerDataIdAndImageInfoId(fromContainerData.getContainerDataId(), containerImageLink.getImageInfoId());
+		   fromContainerImageInfo.setContainerImageIsLinked(containerImageLink.getIsLinked());
+		   fromContainerImageInfo.setUpdatedBy(containerImageLink.getUpdatedBy());
+		   fromContainerImageInfo.setUpdatedDate(containerImageLink.getUpdatedDate());
+		   containerImageInfoRepository.save(fromContainerImageInfo);	   
+		   
+		   
+		   ContainerImageInfo toContainerImageInfo =containerImageInfoRepository.findByContainerDataIdAndImageInfoId(toContainerData.getContainerDataId(), containerImageLink.getImageInfoId());
+		   
+		   if(toContainerImageInfo == null) {
+			   toContainerImageInfo = new ContainerImageInfo();
+		   }
+		    
+		   toContainerImageInfo.setContainerDataId(toContainerData.getContainerDataId());
+		   toContainerImageInfo.setContainerImageInfoId(containerImageLink.getImageInfoId());
+		   toContainerImageInfo.setImageInfo(fromContainerImageInfo.getImageInfo());
+		   
+		   if (containerImageLink.getIsLinked() == 0 ) {
+			   toContainerImageInfo.setContainerImageIsActive(0);
+			   toContainerImageInfo.setContainerImageIsLinked(0);
+		   } else {
+			   toContainerImageInfo.setContainerImageIsLinked(0);
+			   toContainerImageInfo.setContainerImageIsActive(1);
+		   }
+		   
+		  
+		   toContainerImageInfo.setUpdatedBy(containerImageLink.getUpdatedBy());
+		   toContainerImageInfo.setUpdatedDate(containerImageLink.getUpdatedDate());
+		   containerImageInfoRepository.save(toContainerImageInfo);	
+		   
+		   
+		return toContainerImageInfo;
 	}
 	
 }

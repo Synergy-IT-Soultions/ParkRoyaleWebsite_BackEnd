@@ -25,11 +25,13 @@ public interface ContainerImageInfoRepository extends JpaRepository<ContainerIma
 	@Query(value="SELECT T206.* "
 			+ "  FROM T206_Container_Image_Info T206 "	
 			+ "  WHERE T206.C204_Container_Data_id = ?1 "
-			+ "  AND t206.C301_Cont_Image_ID = ?2 ", nativeQuery=true)
+			+ "  AND t206.C301_Cont_Image_ID = ?2 "
+			+ "  AND t206.C206_Cont_Image_Is_Active = 1 ", nativeQuery=true)
 	ContainerImageInfo findByContainerDataIdAndImageInfoId(Long containerDataId, Long imageInfoId);
 	
 	@Query(value="SELECT T206.* "
 			+ "  FROM T206_Container_Image_Info T206 "	
-			+ "  WHERE T206.C301_Cont_Image_ID = ?1 ", nativeQuery=true)
+			+ "  WHERE T206.C301_Cont_Image_ID = ?1 "
+			+ "  AND t206.C206_Cont_Image_Is_Active = 1 ", nativeQuery=true)
 	List<ContainerImageInfo> findByImageInfoId(Long imageInfoId);
 }

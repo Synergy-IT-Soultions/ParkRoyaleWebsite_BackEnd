@@ -40,6 +40,9 @@ public class ContainerImageInfo {
 	@Column(name="C206_Cont_Image_Is_Active")
 	private Integer containerImageIsActive;
 	
+	@Column(name="C206_Cont_Image_Is_Linked")
+	private Integer containerImageIsLinked;
+	
 	@Column(name="C101_Updated_By")
 	private Long updatedBy;
 	
@@ -59,5 +62,12 @@ public class ContainerImageInfo {
 	
 	@Transient
 	private final String editType = "Image";
+	
+	public Integer getContainerImageIsLinked() {
+		if (containerImageIsLinked == null) {
+			return 0;
+		}
+		return containerImageIsLinked;
+	}
 	
 }
