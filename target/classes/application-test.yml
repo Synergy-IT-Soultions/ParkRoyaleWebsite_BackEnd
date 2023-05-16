@@ -28,13 +28,13 @@ org:
    sits:
       pr:
          api:
-            thumbnailHeight: 200
+            thumbnailHeight: 150
             thumbnailWidth: 300
             imageTypesWithMaXWidth: CAROUSEL,IMAGEBAR 
             imageMaxWidthCarousel: 3600
             imageMaxWidth: 1800
             imageMaxHeight: 1200
-            expireToken: 4
+            expireToken: 2
             downloadURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/download/
             downloadThumbnailURL: http://DESKTOP-SLPF06D:8080/ContentManagement/image/thumbnail/download/
             adminAccess: SCOPE_SYS_ADMIN

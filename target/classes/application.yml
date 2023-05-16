@@ -14,7 +14,7 @@ spring:
       pathmatch:
          matching-strategy: ANT_PATH_MATCHER
    datasource:
-      url: jdbc:sqlserver://DESKTOP-SLPF06D:1433;databaseName=LTS;encrypt=true;trustServerCertificate=true;
+      url: jdbc:sqlserver://STAGESRV:1433;databaseName=LTS;encrypt=true;trustServerCertificate=true;
       username: lts_admin
       password: Admin!234
    jpa:
@@ -35,10 +35,10 @@ org:
             imageMaxWidth: 1800
             imageMaxHeight: 1200
             expireToken: 2
-            downloadURL: http://localhost:8080/image/download/
-            downloadThumbnailURL: http://localhost:8080/image/thumbnail/download/
+            downloadURL: http://stage.parkroyalekodaikanal.com/ContentManagement/image/download/
+            downloadThumbnailURL: http://stage.parkroyalekodaikanal.com/ContentManagement/image/thumbnail/download/
             adminAccess: SCOPE_SYS_ADMIN
             directory:
-               uploadedFiles: //Users//vprasath//SynergyITSolutions//Projects//ParkRoyale//UploadedImages//
+               uploadedFiles: D://ParkRoyale//UploadedImages
 
     

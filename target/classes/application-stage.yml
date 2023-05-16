@@ -28,9 +28,13 @@ org:
    sits:
       pr:
          api:
-            thumbnailHeight: 200
+            thumbnailHeight: 150
             thumbnailWidth: 300
-            expireToken: 4
+            imageTypesWithMaXWidth: CAROUSEL,IMAGEBAR 
+            imageMaxWidthCarousel: 3600
+            imageMaxWidth: 1800
+            imageMaxHeight: 1200
+            expireToken: 2
             downloadURL: http://stage.parkroyalekodaikanal.com/ContentManagement/image/download/
             downloadThumbnailURL: http://stage.parkroyalekodaikanal.com/ContentManagement/image/thumbnail/download/
             adminAccess: SCOPE_SYS_ADMIN
